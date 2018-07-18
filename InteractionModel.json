@@ -1,0 +1,144 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "the bean game",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "GetOneBean",
+                    "slots": [],
+                    "samples": [
+                        "please give me a bean",
+                        "bean please",
+                        "I want a bean",
+                        "Give me a bean"
+                    ]
+                },
+                {
+                    "name": "TellBean",
+                    "slots": [
+                        {
+                            "name": "bean",
+                            "type": "bean"
+                        }
+                    ],
+                    "samples": [
+                        "{bean}",
+                        "What do I do for {bean}",
+                        "Tell me about {bean}"
+                    ]
+                },
+                {
+                    "name": "TellAllBean",
+                    "slots": [],
+                    "samples": [
+                        "What are all the beans",
+                        "tell me about all the beans"
+                    ]
+                },
+                {
+                    "name": "PlayGame",
+                    "slots": [],
+                    "samples": [
+                        "I want to play beans",
+                        "lets play beans",
+                        "Play the game"
+                    ]
+                },
+                {
+                    "name": "GetInstructions",
+                    "slots": [],
+                    "samples": [
+                        "How do I play the game",
+                        "instructions please",
+                        "Give me the instructions"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "bean",
+                    "values": [
+                        {
+                            "id": "11",
+                            "name": {
+                                "value": "jelly bean"
+                            }
+                        },
+                        {
+                            "id": "1",
+                            "name": {
+                                "value": "chilli bean"
+                            }
+                        },
+                        {
+                            "id": "2",
+                            "name": {
+                                "value": "jumping bean"
+                            }
+                        },
+                        {
+                            "id": "3",
+                            "name": {
+                                "value": "baked bean"
+                            }
+                        },
+                        {
+                            "id": "4",
+                            "name": {
+                                "value": "beans on toast"
+                            }
+                        },
+                        {
+                            "id": "5",
+                            "name": {
+                                "value": "french bean"
+                            }
+                        },
+                        {
+                            "id": "6",
+                            "name": {
+                                "value": "mexican bean"
+                            }
+                        },
+                        {
+                            "id": "7",
+                            "name": {
+                                "value": "frozen bean"
+                            }
+                        },
+                        {
+                            "id": "8",
+                            "name": {
+                                "value": "runner bean"
+                            }
+                        },
+                        {
+                            "id": "9",
+                            "name": {
+                                "value": "broad bean"
+                            }
+                        },
+                        {
+                            "id": "10",
+                            "name": {
+                                "value": "string bean"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
