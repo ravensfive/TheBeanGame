@@ -76,7 +76,7 @@ def handle_session_end_request():
 def get_welcome_response():
     session_attributes = {}
     card_title = "The Bean Game"
-    speech_output = "Welcome to the bean game, if you've played before, just say lets play beans, if you need to know how to play, then just say, how do you play? " \
+    speech_output = "Welcome to the Bean Game, if you've played before, just say lets play beans, if you need to know how to play, then just say, how do you play? " \
                     "if you need a reminder of all the beans then please say tell me about the beans"       
     reprompt_text = "Start a game by saying lets play beans, or if you need help, just say how do you play? or if you need a reminder of the " \
                     "beans then say, tell me about the beans "
@@ -99,12 +99,12 @@ def get_welcome_response():
 def get_instructions():
     session_attributes = {}
     card_title = "Instructions"
-    speech_output = "Here's how you play the bean game, I'll call out the names of the beans, when I do, you must do the action for that bean,   " \
+    speech_output = "Here's how you play the Bean Game, I'll call out the names of the beans, when I do, you must do the action for that bean,   " \
                     " for example, when I say jumping bean you must jump until the " \
                     "next bean is called, if you need to know the actions for each bean, say " \
-                    "tell me about the beans, if you think you are ready to go then, say lets play beans"
+                    "tell me about the beans, if you think you are ready to go, say lets play beans"
     reprompt_text = "if you want to know about the actions for each bean, say " \
-                    "tell me about the beans, if you think you are ready to go then, say lets play beans"
+                    "tell me about the beans, if you think you are ready to go, say lets play beans"
     
     should_end_session = False
 
@@ -167,7 +167,7 @@ def play_game():
     
     breakstring = generatebreakstring(500, 'ms')
 
-    speech_output = "Get ready your game will start in one, " + breakstring + "two, " + breakstring + "three, " + breakstring + " lets play beans, " +  generatebreakstring(250, 'ms')
+    speech_output = "Get ready your game will start in one, " + breakstring + "two, " + breakstring + "three, " + breakstring + " lets play beans!" +  generatebreakstring(250, 'ms')
 
     # loop around 20 beans and gradually reduce time
     for b in range(0,20):
@@ -180,21 +180,21 @@ def play_game():
 
         # <audio src=https://s3.amazonaws.com/alexaskillravensfive/ooh_la_la._TTH_.mp3 />
 
-        # custom string depending on postion in loop                            
+        # custom string depending on postion in loop
         if b == 0 :
             speech_output = speech_output + "<audio src='https://s3.amazonaws.com/alexaskillravensfive/music_zapsplat_mr_jelly.mp3' /> " + randombean 
         elif b <= 4 :    
-            speech_output = speech_output + " " + generatebreakstring(4000, 'ms') + " " + randombean
+            speech_output = speech_output + " " + generatebreakstring(3500, 'ms') + " " + randombean
             if b == 4 :
-                speech_output = speech_output + "<audio src='https://s3.amazonaws.com/alexaskillravensfive/music_zapsplat_mr_jelly.mp3' /> " + generatebreakstring(500, 'ms')
+                speech_output = speech_output + "<audio src='https://s3.amazonaws.com/alexaskillravensfive/music_zapsplat_mr_jelly.mp3' /> " 
         elif b <= 9 :
-            speech_output = speech_output + " " + generatebreakstring(3000, 'ms') + " " + randombean
+            speech_output = speech_output + " " + generatebreakstring(2500, 'ms') + " " + randombean
             if b == 9 :
-                speech_output = speech_output + "<audio src='https://s3.amazonaws.com/alexaskillravensfive/music_zapsplat_mr_jelly.mp3' /> " + generatebreakstring(500, 'ms')
+                speech_output = speech_output + "<audio src='https://s3.amazonaws.com/alexaskillravensfive/music_zapsplat_mr_jelly.mp3' /> " 
         elif b <= 14 :
-            speech_output = speech_output + " " + generatebreakstring(2000, 'ms') + " " + randombean
+            speech_output = speech_output + " " + generatebreakstring(1500, 'ms') + " " + randombean
             if b == 14 :
-                speech_output = speech_output + generatebreakstring(500, 'ms') + ", are you ready for super fast mode? " + generatebreakstring(500, 'ms')
+                speech_output = speech_output + generatebreakstring(500, 'ms') + ", are you ready for super fast mode? " + generatebreakstring(250, 'ms')
         elif b <= 19 :
             speech_output = speech_output + " " + generatebreakstring(750, 'ms') +  " " +randombean    
             if b == 19 :
@@ -239,7 +239,7 @@ def tell_me_all_beans():
          # add name and description to speech output
             speech_output = speech_output + " " + generatebreakstring(1,'s') + " , " + b['Name'] + " , " + b['Description']    
 
-    speech_output = "<speak>" + speech_output + "</speak>"
+    speech_output = "<speak>" + speech_output + " to play just say lets play beans!" + "</speak>"
 
     # replace bean with phonetic version
     speech_output = speech_output.replace("beans",'<phoneme alphabet="ipa" ph="biːns">beans</phoneme>')
